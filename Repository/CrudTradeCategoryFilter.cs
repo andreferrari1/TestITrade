@@ -8,6 +8,18 @@ namespace TestITrade.Repository
 {
     public class CrudTradeCategoryFilter
     {
+        public TradeCategoryFilter add(string name, int filterExpiredDate, double filterValueLimit, string filterClientSector, bool IsPoliticallyExposed) // Question 2:Category PEP
+        {
+            TradeCategoryFilter tradeCategoryFilter = new TradeCategoryFilter();
+
+            tradeCategoryFilter.FilterClientSector = filterClientSector;
+            tradeCategoryFilter.FilterValueLimit = filterValueLimit;
+            tradeCategoryFilter.FilterExpiredDate = filterExpiredDate;
+            tradeCategoryFilter.Name = name;
+            tradeCategoryFilter.IsPoliticallyExposed = IsPoliticallyExposed;
+
+            return tradeCategoryFilter;
+        }
         public TradeCategoryFilter add( string name, int filterExpiredDate, double filterValueLimit, string filterClientSector )
         {
             TradeCategoryFilter tradeCategoryFilter = new TradeCategoryFilter();
@@ -16,6 +28,7 @@ namespace TestITrade.Repository
             tradeCategoryFilter.FilterValueLimit = filterValueLimit;
             tradeCategoryFilter.FilterExpiredDate = filterExpiredDate;
             tradeCategoryFilter.Name = name;
+            tradeCategoryFilter.IsPoliticallyExposed = false;
 
             return tradeCategoryFilter;
         }

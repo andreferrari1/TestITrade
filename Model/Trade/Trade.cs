@@ -10,12 +10,22 @@ namespace TestITrade.Model
         private double value;
         private string clientSector;
         private DateTime nextPaymentDate;
+        private bool isPoliticallyExposed;
 
-       public Trade(double _value, string _clientSector, DateTime _nextPaymentDate)
+        public Trade(double _value, string _clientSector, DateTime _nextPaymentDate)
         {
             value = _value;
             clientSector = _clientSector;
             nextPaymentDate = _nextPaymentDate;
+            isPoliticallyExposed = false;
+        }
+
+        public Trade(double _value, string _clientSector, DateTime _nextPaymentDate, bool _isPoliticallyExposed) // Question 2:Category PEP
+        {
+            value = _value;
+            clientSector = _clientSector;
+            nextPaymentDate = _nextPaymentDate;
+            isPoliticallyExposed = _isPoliticallyExposed;
         }
 
         public double Value
@@ -32,6 +42,13 @@ namespace TestITrade.Model
         {
             get { return nextPaymentDate; }
         }
+
+
+        public bool IsPoliticallyExposed
+        {
+            get { return isPoliticallyExposed; }
+        }
+        
 
     }
 }
